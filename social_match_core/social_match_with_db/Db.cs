@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace AsanDB
@@ -54,8 +53,7 @@ namespace AsanDB
             catch (MySqlException ex)
             {
                 string exception = "Exception : " + ex.Message.ToString() + "\n\rApplication will close now. \n\r" + squery;
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
-                Debug(exception);
+              
 
                 Environment.Exit(1);
             }
@@ -155,7 +153,6 @@ namespace AsanDB
             {
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
 
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
 
                 Debug(exception);
             }
@@ -175,7 +172,6 @@ namespace AsanDB
             {
                 string exception = "Exception : " + my.Message.ToString() + "\n\r SQL Query : \n\r" + squery;
 
-                MessageBox.Show(exception, "Uncaught MYSQL Exception");
 
                 Debug(exception);
             }
@@ -239,6 +235,7 @@ namespace AsanDB
 
             return column;
         }
+
 
 
         public void Debug(string error) {
